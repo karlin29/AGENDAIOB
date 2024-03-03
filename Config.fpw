@@ -1,0 +1,9 @@
+path = forms;icons;prgs;ocx;dbs;imgs
+procedure = prgs\procs
+CODEPAGE=AUTO
+TITLE=Sistema de Agenda
+CONFIRM=OFF
+RESOURCE=C:\AGENDAIOB\FOXUSER.DBF
+TMPFILES=C:\WINDOWS\TEMP
+SYSMENU=OFF
+

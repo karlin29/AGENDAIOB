@@ -1,0 +1,38 @@
+Program c:\agendaiob\prgs\principal.prg has the following errors:
+    Proc./Func. PROCS - Undefined
+
+Program c:\agendaiob\prgs\procs.prg has the following errors:
+    Unknown L2C - Undefined
+
+Form c:\agendaiob\forms\agenda_contatos.scx has the following errors:
+    File WZNEW.BMP - Undefined
+    File WZEDIT.BMP - Undefined
+    File WZDELETE.BMP - Undefined
+    File WZNEXT.BMP - Undefined
+    File LOCATE.BMP - Undefined
+    File WZEND.BMP - Undefined
+    File WZBACK.BMP - Undefined
+    File WZTOP.BMP - Undefined
+    File WZUNDO.BMP - Undefined
+    File DRIVE.BMP - Undefined
+    File WZEXIT.BMP - Undefined
+
+Form c:\agendaiob\forms\agenda_compromissos.scx has the following errors:
+    File WZNEW.BMP - Undefined
+    File WZEDIT.BMP - Undefined
+    File WZDELETE.BMP - Undefined
+    File WZNEXT.BMP - Undefined
+    File LOCATE.BMP - Undefined
+    File WZEND.BMP - Undefined
+    File WZBACK.BMP - Undefined
+    File WZTOP.BMP - Undefined
+    File WZUNDO.BMP - Undefined
+    File DRIVE.BMP - Undefined
+    File WZEXIT.BMP - Undefined
+
+Form c:\agendaiob\forms\backup_contatos.scx has the following errors:
+    File WZEXIT.BMP - Undefined
+
+Program c:\agendaiob\prgs\program1.prg has the following errors:
+    Proc./Func. PROCS - Undefined
+
