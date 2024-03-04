@@ -15,8 +15,10 @@ Considerando o banco de dados PostgreSQL versão 10.10 ou superior instalado na 
 
 1. Faça o download ou clone este repositório na raiz do C:\\ com o nome `AGENDAIOB`.
 2. Vá na pasta instalacao/scripts.
-3. Por ordem dos arquivos, copie e cole seu conteúdo no pgAdmin e execute (o primeiro relacionado ao create do banco de dados, pode ser modificado de acordo com um nome de banco de preferência.
+3. Por ordem dos arquivos, copie e cole seu conteúdo no pgAdmin e execute.
+  3.1 O primeiro relacionado ao create do banco de dados, pode ser modificado de acordo com um nome de banco de preferência.
 5. Ainda na pasta instalacao, execute o arquivo `Instalar.bat` como administrador para registrar recursos de calendário necessários.
+
 
 ## Configuração
 
