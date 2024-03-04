@@ -17,19 +17,12 @@ SET RESOURCE ON
 set sysmenu off
 _screen.windowstate = 2
 _screen.icon        = "C:\AGENDAIOB\icons\icon.ico"
-_screen.closable    = .t.
+_screen.closable    = .f.
 _screen.minbutton   = .t.
 _screen.maxbutton   = .f.
 _screen.minheight   = 600
 _screen.minwidth    = 800
 
-*!*	_screen.addobject('imgfundo','image')
-*!*	_screen.imgfundo.width = _screen.width
-*!*	_screen.imgfundo.height = _screen.height
-*!*	_screen.imgfundo.stretch = 2
-*!*	_screen.imgfundo.picture = iif(file(marquivo_fundo),marquivo_fundo,'transfus_hemote.png')
-*!*	_screen.imgfundo.visible = .t.
-*!*	_screen.imgfundo.enabled = .t.
 _screen.maxbutton   = .t.
 
 _screen.addproperty( 'titulo', " Sistema de Agenda " )
@@ -37,8 +30,6 @@ _screen.addproperty( 'titulo', " Sistema de Agenda " )
 *Redimencionar
 public ohandler, mredimencionar_tela
 mredimencionar_tela = .t.
-*ohandler = newobject('myhandler')
-*bindevent(_screen,'Resize',ohandler,'myresize')
 
 caminho_arquivo = "C:\AGENDAIOB\config.txt"
 
@@ -77,18 +68,8 @@ If handle < 0
    Return
 ENDIF
 
-*!*	DO "C:\Users\carlo\OneDrive\Área de Trabalho\agenda_iob\json.prg"
-*!*	DO "C:\Users\carlo\OneDrive\Área de Trabalho\agenda_iob\procs.prg"
-
 DO procs
 DO json
 DO menu.mpr 
-*on error do form mensagem_erro with program(),lineno()
 read events
 
-*!*	_SCREEN.Closable = .t.
-*!*	_SCREEN.WINDOWSTATE = 2
-*!*	_SCREEN.caption='Sitema de Agenda - Versão 1.0 Data: '+DTOC(DATE()) 
-*!*	*DO "C:\ProjetosVFP\Vendas\menus\menuprincipal.mpr" && Executa o Menu
-*!*	*_SCREEN.PICTURE = "C:\ProjetosVFP\Vendas\imgs\wallpaper.png"	
-*!*	READ EVENTS

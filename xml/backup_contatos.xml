@@ -1,0 +1,37 @@
+<?xml version = "1.0" encoding="Windows-1252" standalone="yes"?>
+<VFPData>
+	<c_contato_bkp>
+		<codigo>55</codigo>
+		<nome>CARLOS AVANCE ALTERADO AAA</nome>
+		<telefone>2126287455</telefone>
+		<celular>21988870333</celular>
+		<email>CARLOSAVANCE@GMAIL.COM</email>
+		<data_nasc>1992-04-29</data_nasc>
+		<codigo1>52</codigo1>
+		<codigo_contato>55</codigo_contato>
+		<cep>24110650</cep>
+		<logradouro>RUA DOUTOR MARCH AAA</logradouro>
+		<numero>352</numero>
+		<complemento>(Continua em São Gonçalo) - lado par</complemento>
+		<bairro>Barreto</bairro>
+		<cidade>Niterói</cidade>
+		<estado>RJ</estado>
+	</c_contato_bkp>
+	<c_contato_bkp>
+		<codigo>56</codigo>
+		<nome>NATHALIA AVANCE</nome>
+		<telefone>2123321444</telefone>
+		<celular>98745544111</celular>
+		<email>NANA@GMAIL.COM</email>
+		<data_nasc>1995-01-09</data_nasc>
+		<codigo1>53</codigo1>
+		<codigo_contato>56</codigo_contato>
+		<cep>24110650</cep>
+		<logradouro>RUA DOUTOR MARCH</logradouro>
+		<numero>352</numero>
+		<complemento>(CONTINUA EM SÃO GONÇALO) - LADO PAR</complemento>
+		<bairro>BARRETO</bairro>
+		<cidade>NITERÓI</cidade>
+		<estado>RJ</estado>
+	</c_contato_bkp>
+</VFPData>

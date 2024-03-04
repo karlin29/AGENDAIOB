@@ -75,9 +75,6 @@ function logsql
 	return m.logico
 endfunc
 
-SET STEP ON
-
-
 *******************************************************************************************
 * Função   : busca_cep()
 * Objetivo : Buscar CEP
