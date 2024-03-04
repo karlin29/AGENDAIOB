@@ -15,17 +15,21 @@ Considerando o banco de dados PostgreSQL versão 10.10 ou superior instalado na 
 
 1. Faça o download ou clone este repositório na raiz do C:\\ com o nome `AGENDAIOB`.
 2. Vá na pasta instalacao/scripts.
-3. Abra os arquivos de script para execução no banco de dados e execute um por vez no pgAdmin.
-4. Ainda na pasta instalacao, execute o arquivo `Instalar.bat` como administrador para registrar recursos de calendário necessários.
+3. Por ordem dos arquivos, copie e cole seu conteúdo no pgAdmin e execute (o primeiro relacionado ao create do banco de dados, pode ser modificado de acordo com um nome de banco de preferência.
+5. Ainda na pasta instalacao, execute o arquivo `Instalar.bat` como administrador para registrar recursos de calendário necessários.
 
 ## Configuração
 
 1. Na pasta raiz `AGENDAIOB`, encontre o arquivo chamado  `config.txt`.
-2. Atribua as configurações de conexão via ODBC
+2. Atribua as configurações de conexão com o banco de dados via ODBC.
+
+## Execução
+
+- Após as configurações, abra o aplicativo `agenda.exe` que está na raiz da pasta `AGENDAIOB`.
 
 ## Considerações
 
-- Este projeto tem como finalidade de provar meus conhecimentos em programação, utilizando as tecnologias VisualFoxPro9 e banco de dados PostgreSql.
+- Este projeto tem como finalidade, provar meus conhecimentos em programação, utilizando as tecnologias VisualFoxPro9 e banco de dados PostgreSql.
 - Qualquer dúvida relacionada ao projeto, estou a disposição.
 
 
