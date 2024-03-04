@@ -1,0 +1,186 @@
+-- FUNCTION: public.inserir_contato_endereco(character varying, character, character, character varying, date, character, character varying, integer, character varying, character varying, character varying, character)
+
+-- DROP FUNCTION IF EXISTS public.inserir_contato_endereco(character varying, character, character, character varying, date, character, character varying, integer, character varying, character varying, character varying, character);
+
+CREATE OR REPLACE FUNCTION public.inserir_contato_endereco(
+	nome_in character varying,
+	telefone_in character,
+	celular_in character,
+	email_in character varying,
+	data_nasc_in date,
+	cep_in character,
+	logradouro_in character varying,
+	numero_in integer,
+	complemento_in character varying,
+	bairro_in character varying,
+	cidade_in character varying,
+	estado_in character)
+    RETURNS integer
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+DECLARE
+    codigo_contato INT;
+BEGIN
+    -- Inserir o contato
+    INSERT INTO contato (nome, telefone, celular, email, data_nasc)
+    VALUES (nome_in, telefone_in, celular_in, email_in, data_nasc_in)
+    RETURNING codigo INTO codigo_contato;
+
+    -- Inserir o endereço relacionado ao contato
+    INSERT INTO endereco (codigo_contato, cep, logradouro, numero, complemento, bairro, cidade, estado)
+    VALUES (codigo_contato, cep_in, logradouro_in, numero_in, complemento_in, bairro_in, cidade_in, estado_in);
+
+    -- Retornar o código do contato
+    RETURN codigo_contato;
+END;
+$BODY$;
+
+ALTER FUNCTION public.inserir_contato_endereco(character varying, character, character, character varying, date, character, character varying, integer, character varying, character varying, character varying, character)
+    OWNER TO postgres;
+
+-- FUNCTION: public.alterar_contato_endereco(integer, character varying, character, character, character varying, date, character, character varying, integer, character varying, character varying, character varying, character)
+
+-- DROP FUNCTION IF EXISTS public.alterar_contato_endereco(integer, character varying, character, character, character varying, date, character, character varying, integer, character varying, character varying, character varying, character);
+
+CREATE OR REPLACE FUNCTION public.alterar_contato_endereco(
+	codigo_contato_in integer,
+	nome_in character varying,
+	telefone_in character,
+	celular_in character,
+	email_in character varying,
+	data_nasc_in date,
+	cep_in character,
+	logradouro_in character varying,
+	numero_in integer,
+	complemento_in character varying,
+	bairro_in character varying,
+	cidade_in character varying,
+	estado_in character)
+    RETURNS void
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+BEGIN
+    -- Atualizar o contato
+    UPDATE contato
+    SET nome = nome_in,
+        telefone = telefone_in,
+        celular = celular_in,
+        email = email_in,
+        data_nasc = data_nasc_in
+    WHERE codigo = codigo_contato_in;
+
+    -- Atualizar o endereço relacionado ao contato
+    UPDATE endereco
+    SET cep = cep_in,
+        logradouro = logradouro_in,
+        numero = numero_in,
+        complemento = complemento_in,
+        bairro = bairro_in,
+        cidade = cidade_in,
+        estado = estado_in
+    WHERE codigo_contato = codigo_contato_in;
+
+END;
+$BODY$;
+
+ALTER FUNCTION public.alterar_contato_endereco(integer, character varying, character, character, character varying, date, character, character varying, integer, character varying, character varying, character varying, character)
+    OWNER TO postgres;
+
+-- FUNCTION: public.deletar_contato_endereco(integer)
+
+-- DROP FUNCTION IF EXISTS public.deletar_contato_endereco(integer);
+
+CREATE OR REPLACE FUNCTION public.deletar_contato_endereco(
+	codigo_contato_in integer)
+    RETURNS void
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+BEGIN
+    -- Excluir o endereço relacionado ao contato
+    DELETE FROM endereco
+    WHERE codigo_contato = codigo_contato_in;
+
+    -- Excluir o contato
+    DELETE FROM contato
+    WHERE codigo = codigo_contato_in;
+
+END;
+$BODY$;
+
+ALTER FUNCTION public.deletar_contato_endereco(integer)
+    OWNER TO postgres;
+
+-- FUNCTION: public.inserir_compromisso(date, character, character varying)
+
+-- DROP FUNCTION IF EXISTS public.inserir_compromisso(date, character, character varying);
+
+CREATE OR REPLACE FUNCTION public.inserir_compromisso(
+	data_in date,
+	hora_in character,
+	descricao_in character varying)
+    RETURNS void
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+BEGIN
+    INSERT INTO compromisso (data, hora, descricao)
+    VALUES (data_in, hora_in, descricao_in);
+END;
+$BODY$;
+
+ALTER FUNCTION public.inserir_compromisso(date, character, character varying)
+    OWNER TO postgres;
+
+
+-- FUNCTION: public.deletar_compromisso(integer, date, character, character varying)
+
+-- DROP FUNCTION IF EXISTS public.deletar_compromisso(integer, date, character, character varying);
+
+CREATE OR REPLACE FUNCTION public.deletar_compromisso(
+	codigo_del integer,
+	data_del date,
+	hora_del character,
+	descricao_del character varying)
+    RETURNS void
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+BEGIN
+    DELETE FROM compromisso WHERE codigo = codigo_del and data = data_del
+		and hora = hora_del and descricao = descricao_del;
+END;
+$BODY$;
+
+ALTER FUNCTION public.deletar_compromisso(integer, date, character, character varying)
+    OWNER TO postgres;
+
+-- FUNCTION: public.deletar_todos_registros()
+
+-- DROP FUNCTION IF EXISTS public.deletar_todos_registros();
+
+CREATE OR REPLACE FUNCTION public.deletar_todos_registros(
+	)
+    RETURNS void
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+BEGIN
+    -- Deletar todos os registros da tabela 'endereco'
+    DELETE FROM endereco;
+
+    -- Deletar todos os registros da tabela 'contato'
+    DELETE FROM contato;
+END;
+$BODY$;
+
+ALTER FUNCTION public.deletar_todos_registros()
+    OWNER TO postgres;

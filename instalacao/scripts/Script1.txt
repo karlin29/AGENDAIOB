@@ -1,0 +1,4 @@
+-- 1 - Criação do banco de dados:
+-- Database: agenda
+CREATE DATABASE agenda;
+----------------------------------------------

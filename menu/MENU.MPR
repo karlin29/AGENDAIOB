@@ -1,6 +1,6 @@
 *       *********************************************************
 *       *                                                         
-*       * 03/03/2024             MENU.MPR               19:19:57  
+*       * 03/03/2024             MENU.MPR               20:30:47  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
@@ -26,36 +26,34 @@
 SET SYSMENU TO
 SET SYSMENU AUTOMATIC
 
-DEFINE PAD _6uf15fop2 OF _MSYSMENU PROMPT "Cadastro Geral" COLOR SCHEME 3 ;
+DEFINE PAD _6uf17yszn OF _MSYSMENU PROMPT "\<Cadastro Geral" COLOR SCHEME 3 ;
 	KEY ALT+C, ""
-DEFINE PAD _6uf15fop3 OF _MSYSMENU PROMPT "Backup" COLOR SCHEME 3 ;
+DEFINE PAD _6uf17yszo OF _MSYSMENU PROMPT "\<Backup" COLOR SCHEME 3 ;
 	KEY ALT+B, ""
-DEFINE PAD _6uf15fop4 OF _MSYSMENU PROMPT "Sobre" COLOR SCHEME 3 ;
+DEFINE PAD _6uf17yszp OF _MSYSMENU PROMPT "\<Sobre" COLOR SCHEME 3 ;
 	KEY ALT+S, ""
-DEFINE PAD _6uf15fop5 OF _MSYSMENU PROMPT "Finalizar" COLOR SCHEME 3 ;
+DEFINE PAD _6uf17yszq OF _MSYSMENU PROMPT "\<Finalizar" COLOR SCHEME 3 ;
 	KEY ALT+F, ""
-ON PAD _6uf15fop2 OF _MSYSMENU ACTIVATE POPUP cadastroge
-ON SELECTION PAD _6uf15fop3 OF _MSYSMENU ;
-	DO _6uf15fop6 ;
+ON PAD _6uf17yszn OF _MSYSMENU ACTIVATE POPUP cadastroge
+ON SELECTION PAD _6uf17yszo OF _MSYSMENU ;
+	DO _6uf17yszr ;
 	IN LOCFILE("MENU\MENU" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU?")
-ON SELECTION PAD _6uf15fop5 OF _MSYSMENU ;
-	DO _6uf15fop7 ;
-	IN LOCFILE("MENU\MENU" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU?")
+ON SELECTION PAD _6uf17yszq OF _MSYSMENU quit
 
 DEFINE POPUP cadastroge MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF cadastroge PROMPT "Lista de Contatos"
 DEFINE BAR 2 OF cadastroge PROMPT "Agenda Compromissos"
 ON SELECTION BAR 1 OF cadastroge ;
-	DO _6uf15fop8 ;
+	DO _6uf17yszs ;
 	IN LOCFILE("MENU\MENU" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU?")
 ON SELECTION BAR 2 OF cadastroge ;
-	DO _6uf15fop9 ;
+	DO _6uf17yszt ;
 	IN LOCFILE("MENU\MENU" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU?")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _6UF15FOP6  ON SELECTION PAD                            
+*       * _6UF17YSZR  ON SELECTION PAD                            
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -66,56 +64,39 @@ ON SELECTION BAR 2 OF cadastroge ;
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6uf15fop6
+PROCEDURE _6uf17yszr
 DO FORM backup_contatos
 
 
 *       *********************************************************
 *       *                                                         
-*       * _6UF15FOP7  ON SELECTION PAD                            
-*       *                                                         
-*       * Procedure Origin:                                       
-*       *                                                         
-*       * From Menu:  MENU.MPR,            Record:    9           
-*       * Called By:  ON SELECTION PAD                            
-*       * Prompt:     Finalizar                                   
-*       * Snippet:    2                                           
-*       *                                                         
-*       *********************************************************
-*
-PROCEDURE _6uf15fop7
-thisform.release()
-
-
-*       *********************************************************
-*       *                                                         
-*       * _6UF15FOP8  ON SELECTION BAR 1 OF POPUP cadastroge      
+*       * _6UF17YSZS  ON SELECTION BAR 1 OF POPUP cadastroge      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
 *       * From Menu:  MENU.MPR,            Record:    5           
 *       * Called By:  ON SELECTION BAR 1 OF POPUP cadastroge      
 *       * Prompt:     Lista de Contatos                           
-*       * Snippet:    3                                           
+*       * Snippet:    2                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6uf15fop8
+PROCEDURE _6uf17yszs
 DO FORM agenda_contatos
 
 
 *       *********************************************************
 *       *                                                         
-*       * _6UF15FOP9  ON SELECTION BAR 2 OF POPUP cadastroge      
+*       * _6UF17YSZT  ON SELECTION BAR 2 OF POPUP cadastroge      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
 *       * From Menu:  MENU.MPR,            Record:    6           
 *       * Called By:  ON SELECTION BAR 2 OF POPUP cadastroge      
 *       * Prompt:     Agenda Compromissos                         
-*       * Snippet:    4                                           
+*       * Snippet:    3                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6uf15fop9
+PROCEDURE _6uf17yszt
 DO FORM agenda_compromissos

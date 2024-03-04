@@ -1,6 +1,6 @@
 Driver=PostgreSQL ODBC Driver(UNICODE)
 server=localhost
 Port=5432
-Database=agenda
+Database=agenda2
 UserID=postgres
 Senha=admin

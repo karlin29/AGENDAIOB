@@ -1,0 +1,34 @@
+-- 2 - Criação da tabela contato:
+CREATE TABLE contato (
+    codigo SERIAL PRIMARY KEY,
+    nome VARCHAR(200),
+    telefone VARCHAR(20),
+    celular VARCHAR(20),
+    email VARCHAR(150),
+    data_nasc DATE
+);
+----------------------------------------------
+
+-- 3 - Criação da tabela endereco:
+CREATE TABLE endereco (
+    codigo SERIAL PRIMARY KEY,
+    codigo_contato INTEGER,
+    cep CHAR(8),
+    logradouro VARCHAR(200),
+    numero INTEGER,
+    complemento VARCHAR(200),
+    bairro VARCHAR(100),
+    cidade VARCHAR(100),
+    estado CHAR(2),
+    CONSTRAINT endereco_codigo_contato_fkey FOREIGN KEY (codigo_contato)
+        REFERENCES contato (codigo)
+);
+----------------------------------------------
+
+-- 4 - Criação da tabela compromisso:
+CREATE TABLE compromisso (
+    codigo SERIAL PRIMARY KEY,
+    data DATE,
+    hora CHAR(5),
+    descricao VARCHAR(200)
+);
