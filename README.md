@@ -11,30 +11,21 @@ Este é um aplicativo em Visual FoxPro que permite o cadastro de contatos, funci
   
 ## Instalação
 
-1. Faça o download ou clone este repositório.
-2. Abra o Visual FoxPro.
-3. Abra o arquivo `agenda.pjx`.
-4. Execute o programa.
+Considerando o banco de dados PostgreSQL versão 10.10 ou superior instalado na máquina:
 
-## Uso
+1. Faça o download ou clone este repositório na raiz do C:\\ com o nome `AGENDAIOB`.
+2. Vá na pasta instalacao/scripts.
+3. Abra os arquivos de script para execução no banco de dados e execute um por vez no pgAdmin.
+4. Ainda na pasta instalacao, execute o arquivo `Instalar.bat` como administrador para registrar recursos de calendário necessários.
 
-1. Na tela inicial, você pode acessar as diferentes funcionalidades através do menu.
-2. Para cadastrar um novo contato, clique em "Contatos" > "Novo Contato".
-3. Para marcar uma nova tarefa, clique em "Tarefas" > "Nova Tarefa".
-4. Para consultar o endereço de um contato, clique em "Consultar CEP".
-5. Para fazer backup dos dados, clique em "Backup" > "Gerar Backup".
-6. Para importar dados de um arquivo XML, clique em "Backup" > "Importar Backup".
+## Configuração
 
-## Contribuindo
+1. Na pasta raiz `AGENDAIOB`, encontre o arquivo chamado  `config.txt`.
+2. Atribua as configurações de conexão via ODBC
 
-Contribuições são bem-vindas! Por favor, siga estas etapas:
+## Considerações
 
-1. Faça um fork do repositório.
-2. Crie uma branch para sua feature: `git checkout -b feature-nova`.
-3. Faça commit de suas mudanças: `git commit -am 'Adiciona nova feature'`.
-4. Faça push para a branch: `git push origin feature-nova`.
-5. Envie uma Pull Request.
+- Este projeto tem como finalidade de provar meus conhecimentos em programação, utilizando as tecnologias VisualFoxPro9 e banco de dados PostgreSql.
+- Qualquer dúvida relacionada ao projeto, estou a disposição.
 
-## Licença
 
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
