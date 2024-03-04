@@ -1,4 +1,4 @@
-path = forms;icons;prgs;ocx;dbs;imgs
+path = forms;icons;prgs;ocx;dbs;imgs;menu
 procedure = prgs\procs
 CODEPAGE=AUTO
 TITLE=Sistema de Agenda
