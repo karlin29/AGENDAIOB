@@ -27,6 +27,10 @@ Considerando o banco de dados PostgreSQL versão 10.10 ou superior instalado na 
 
 - Após as configurações, abra o aplicativo `agenda.exe` que está na raiz da pasta `AGENDAIOB`.
 
+## Projeto
+
+- O arquivo principal do projeto se encontra na pasta: `projeto\agenda_contatos.PJT`.
+
 ## Considerações
 
 - Este projeto tem como finalidade, provar meus conhecimentos em programação, utilizando as tecnologias VisualFoxPro9 e banco de dados PostgreSql.
